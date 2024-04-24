@@ -1,0 +1,64 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "gulp": "gulp --gulpfile resources/assets/pixie/gulpfile.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.1.1",
+    "cross-env": "^5.0.1",
+    "css-loader": "^0.28.5",
+    "exports-loader": "^0.6.4",
+    "expose-loader": "^0.7.3",
+    "imports-loader": "^0.7.1",
+    "jquery": "^3.1.1",
+    "laravel-mix": "^1.0",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.0.6",
+    "resolve-url-loader": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "url-loader": "^0.5.9",
+    "vue": "^2.5.2"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "bootbox": "^4.4.0",
+    "bootstrap": "^4.0.0-beta",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-touch-punch": "^0.2.3",
+    "jstree": "^3.3.4",
+    "moment": "^2.18.1",
+    "pnotify": "^3.2.1",
+    "popper.js": "^1.12.3",
+    "pretty-bytes": "^4.0.2",
+    "prettysize": "^0.1.0",
+    "tempusdominus-bootstrap-4": "^5.0.0-alpha9",
+    "urijs": "^1.18.12"
+  },
+  "standard": {
+    "ignore": [
+      "public/**"
+    ],
+    "globals": [
+      "angular",
+      "fabric",
+      "InstoreX",
+      "$",
+      "_",
+      "axios",
+      "bootbox",
+      "jQuery",
+      "PNotify",
+      "URI",
+      "pretty",
+      "moment"
+    ]
+  }
+}

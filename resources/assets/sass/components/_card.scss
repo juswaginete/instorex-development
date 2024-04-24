@@ -1,0 +1,16 @@
+@import "../_variables";
+
+div .card-body {
+  background-color: $card-color;
+  color: white;
+}
+
+div .card {
+  background-color: $card-color;
+  opacity: 0.9;
+}
+
+div .card-title {
+  color: $orange-text;
+}
+

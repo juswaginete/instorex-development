@@ -1,0 +1,24 @@
+h3 .h3-orange {
+  color: $orange-text;
+}
+
+h1 .h1-orange {
+  color: $orange-text;
+}
+
+.orange-text {
+  color: $orange-text;
+}
+
+.spinner {
+  //border: 16px solid #f3f3f3; /* Light grey */
+  //border-top: 16px solid #3498db; /* Blue */
+  //border-radius: 50%;
+  //width: 120px;
+  //height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+.font-huge {
+  font-size: 400%;
+}

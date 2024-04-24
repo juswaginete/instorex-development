@@ -1,0 +1,251 @@
+.file-manager, .file-chooser {
+  .file-manager-header {
+    margin-bottom: 30px;
+
+    .manager-path {
+      .manager-step {
+        display: inline-block;
+        margin-right: 20px;
+        cursor: pointer;
+
+        span, i {
+          color: white;
+        }
+
+        i {
+          margin-right: 10px;
+          font-size: 2em;
+          vertical-align: sub;
+        }
+
+        span {
+          font-size: 15px;
+        }
+
+        &.active {
+          span, i {
+            color: $orange-text;
+          }
+        }
+      }
+    }
+  }
+  .file-manager-content {
+    color: black;
+
+    .file-container {
+      height: 200px;
+      margin-bottom: 20px;
+
+      .folder {
+        text-align: center;
+        padding-top: 20px;
+
+        span.folder-title, i {
+          color: white;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          span.folder-title, i {
+            color: $orange-text;
+          }
+        }
+
+        i {
+          width: 100%;
+          font-size: 100px;
+        }
+
+        span.folder-title {
+          font-size: 20px;
+          margin-top: 10px;
+          display: block;
+        }
+      }
+      .file {
+        position: relative;
+        background-color: white;
+        height: 100%;
+        padding: 10px;
+
+        .file-header {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 30px;
+          height: 30px;
+          background-color: $orange-text;
+          color: white;
+          text-align: center;
+          font-size: 17px;
+          cursor: pointer;
+
+          i {
+            display: block;
+            margin: 7px 0;
+          }
+        }
+
+        .file-preview {
+          width:100%;
+          height:80px;
+          margin-bottom: 10px;
+
+          .file-preview-background {
+            background: -webkit-linear-gradient(#d4d4d5, #919191); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(#d4d4d5, #919191); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(#d4d4d5, #919191); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(#d4d4d5, #919191); /* Standard syntax */
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+
+            img {
+              display: block;
+              margin: 0 auto;
+              object-fit: cover;
+            }
+          }
+        }
+        .file-info {
+          overflow: hidden;
+
+          .file-name {
+            max-height:66px;
+            overflow: hidden;
+            margin: 0;
+          }
+        }
+        .file-overlay {
+          width: 100%;
+          height: 100%;
+          top: 0;
+          position: absolute;
+          left: 0;
+          background: rgba(0,0,0,0.5);
+
+          .file-edit {
+            margin-top: 30px;
+
+            .file-edit-btn {
+              padding-left: 10px;
+              display: block;
+              background: #242424;
+              margin-bottom: 2px;
+              height: 40px;
+              line-height: 40px;
+              color: #fff;
+              font-size: 18px;
+              cursor: pointer;
+
+              i:before {
+                color: $orange-text;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .loading-content {
+    text-align: center;
+    color: #FFF;
+  }
+}
+
+#playlist {
+  .file {
+    color: black;
+    height: 200px;
+    margin-bottom: 20px;
+    position: relative;
+    background-color: white;
+    padding: 10px;
+    margin-left: 20px;
+    width: 14%;
+
+    .file-header {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 30px;
+      background-color: $orange-text;
+      color: white;
+      text-align: center;
+      font-size: 17px;
+      cursor: pointer;
+
+      i {
+        display: block;
+        margin: 7px 0;
+      }
+    }
+
+    .file-preview {
+      width:100%;
+      height:80px;
+      margin-bottom: 10px;
+
+      .file-preview-background {
+        background: -webkit-linear-gradient(#d4d4d5, #919191); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(#d4d4d5, #919191); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#d4d4d5, #919191); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(#d4d4d5, #919191); /* Standard syntax */
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        img {
+          display: block;
+          margin: 0 auto;
+          object-fit: cover;
+        }
+      }
+    }
+    .file-info {
+      overflow: hidden;
+
+      .file-name {
+        max-height:66px;
+        overflow: hidden;
+        margin: 0;
+      }
+    }
+    .file-overlay {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      left: 0;
+      background: rgba(0,0,0,0.5);
+
+      .file-edit {
+        margin-top: 30px;
+
+        .file-edit-btn {
+          padding-left: 10px;
+          display: block;
+          background: #242424;
+          margin-bottom: 2px;
+          height: 40px;
+          line-height: 40px;
+          color: #fff;
+          font-size: 18px;
+          cursor: pointer;
+
+          i:before {
+            color: $orange-text;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

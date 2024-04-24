@@ -1,0 +1,47 @@
+@import "../_variables";
+
+.homePage {
+  h5 {
+    color: $white-text;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 1.3em;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  h4 {
+    color: $white-text;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.3vw;
+  }
+
+  a:hover, a:focus, a:active, a:visited {
+    text-decoration: none;
+  }
+
+  .menu-item {
+    padding: 10px;
+    width: 18vw;
+    height: 18vw;
+    background-color: $card-color;
+
+    i {
+      display: block;
+      margin: auto;
+      padding-top: 20px;
+      color: $orange-text;
+      font-size: 9vw;
+      width: 50%;
+    }
+    &:hover {
+      background-color: $orange-text;
+      i {
+        color: $white-text;
+      }
+    }
+  }
+}

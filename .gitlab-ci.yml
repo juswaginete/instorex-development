@@ -1,0 +1,26 @@
+stages:
+  - test
+
+test:syntax:
+  image: greew/wsd:eazy
+  stage: test
+  script:
+    - find app/ -name "*.php" -print0 | xargs -0 -n1 php -l
+
+test:phpcs:
+  image: greew/wsd:eazy
+  stage: test
+  script:
+    - composer -q -n --no-interaction --prefer-dist --no-ansi --ignore-platform-reqs install
+    - vendor/bin/phpcs -n --standard=PSR2 --extensions=php app/
+
+#test:jslint:
+#  image: greew/wsd:eazy
+#  stage: test
+#  cache:
+#    key: test:eslint
+#    paths:
+#      - node_modules/
+#  script:
+#    - yarn
+#    - /usr/bin/standard "resources/assets/js/**"

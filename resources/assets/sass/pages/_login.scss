@@ -1,0 +1,27 @@
+@import "../_variables";
+
+.loginPage {
+
+  label {
+    color: $white-text;
+  }
+
+  .card-body {
+    padding: 40px;
+  }
+
+  .forgot-pasword {
+    margin-left: 10px;
+    color: $white-text;
+    a, a:hover {
+      color: $orange-text;
+    }
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    width: auto;
+    margin-top: 20px;
+  }
+}

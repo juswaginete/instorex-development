@@ -1,0 +1,65 @@
+@import "../_variables";
+
+.table-theme {
+  table {
+    opacity: 0.8;
+  }
+  td {
+    color: $white-text;
+    border-color: $card-color;
+  }
+  thead {
+    background-color: $card-color;
+  }
+
+  tbody {
+    background-color: $table-row-color;
+    border-top-color: $card-color
+  }
+
+  .btn-outline-warning {
+    border-color: $card-color;
+    color: $white-text;
+    cursor: pointer;
+    i {
+      color: $orange-text;
+      margin-right: 10px;
+      font-size: 1.5rem;
+    }
+  }
+
+  .btn-outline-warning:hover, body .btn-primary:focus {
+    border-color: #f97116;
+    background-color: #f97116;
+    color: $white-text;
+    i {
+      color: $white-text;
+    }
+  }
+
+  .btn-outline-warning:active, body .btn-primary:visited, body .btn-primary:active:focus, body .btn-primary:active:hover {
+    border-color: #f97116;
+    background-color: #f97116;
+    color: $white-text;
+  }
+
+  .image-editor-preview {
+    height: 50px;
+    width: 100px;
+  }
+
+  .search-field {
+    width: 350px;
+    span {
+      background-color: $orange-text
+
+    }
+    i {
+        color: $white-text;
+    }
+  }
+}
+
+
+
+

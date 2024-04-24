@@ -1,0 +1,62 @@
+# Use the official PHP 7.1 image as the base
+FROM php:7.1-fpm
+
+# Set working directory
+WORKDIR /var/www
+
+# Install dependencies for Laravel 5.4
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    git \
+    python \
+    build-essential \
+    curl && \
+    docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
+    docker-php-ext-install pdo pdo_mysql mbstring xml gd tokenizer json
+
+# Install Node.js 8.x and Yarn
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    apt-get install -y nodejs && \
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update && apt-get install -y yarn
+
+# Add to avoid error when running "yarn run dev"
+RUN apt-get update && apt-get install -y npm
+
+# Add to avoid SOAP CLIENT not found error
+RUN docker-php-ext-install soap
+
+# Install Python and build-essential for node-gyp
+RUN apt-get update && apt-get install -y \
+    python \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Clear cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Add user for laravel application
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
+
+# Copy existing application directory contents
+COPY . /var/www
+
+# Copy existing application directory permissions
+COPY --chown=www:www . /var/www
+
+# Change current user to www
+USER www
+
+# Expose port 9000 and start php-fpm server
+EXPOSE 9000
+CMD ["php-fpm"]
