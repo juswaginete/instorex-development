@@ -89,6 +89,18 @@ Following that, and still signed into the php container, we will need to install
 $ yarn install
 ```
 
+After that, and still signed into the php container, you can now run the following command to compile the project.
+
+```
+$ npm run dev
+```
+
+After running the previous command, you can now access the application in the browser via localhost port 80
+
+```
+http://localhost:80/
+```
+
 Extending/build pixie editor (Optional)
 
 ```
